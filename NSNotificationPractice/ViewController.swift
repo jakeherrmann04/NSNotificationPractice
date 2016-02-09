@@ -8,6 +8,9 @@
 
 import UIKit
 
+let notificationKey = "notifyKey"
+let colorNotificationKey = "colorKey"
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -21,5 +24,14 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func notifyButtonPressed(sender: AnyObject) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(notificationKey, object: self)
+    }
+    @IBAction func changeColorButtonPressed(sender: AnyObject) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(colorNotificationKey, object: self)
+        
+    }
 }
 
